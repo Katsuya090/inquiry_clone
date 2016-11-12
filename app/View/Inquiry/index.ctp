@@ -2,7 +2,7 @@
 
   <table>
     <tbody style="border: solid 1px #000">
-    <?php foreach ($inquiry as $key) : ?>
+    <?php foreach ($inquiry as $inquiry) : ?>
         <tr>
             <td style="width: 30%">
                 <?= $this->Html->link(
@@ -11,7 +11,7 @@
                     ); ?>
             </td>
             <td style="width: 70%">
-                登録日: <?= $this->Time->format($inquiry['Inquiry']['created'], '%Y/%m/%d'); ?>
+                登録日: <?= $this->Time->format($inquiry['Inquiry']['createdAt'], '%Y/%m/%d'); ?>
             </td>
         </tr>
     <?php endforeach; ?>
