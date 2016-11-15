@@ -10,8 +10,15 @@
                     ['action' => 'view', $inquiry['Inquiry']['id']]
                     ); ?>
             </td>
-            <td style="width: 70%">
+            <td style="width: 65%">
                 登録日: <?= $this->Time->format($inquiry['Inquiry']['createdAt'], '%Y/%m/%d'); ?>
+            </td>
+            <td style="width: 5%">
+            <?= $this->Form->postLink(
+                '削除',
+                ['action' => 'delete', $inquiry['Inquiry']['id']],
+                ['confirm' => '本当に削除してよろしいですか?']
+            );?>
             </td>
         </tr>
     <?php endforeach; ?>
